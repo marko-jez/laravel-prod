@@ -15,6 +15,6 @@
 
         <p>Nadamo se da će te uživati, kao i jaaa</p>
 
-        <p>Dodavanje nove p</p>
+        <p>Dodavanje nove promjene</p>
     </body>
 </html>
