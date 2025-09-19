@@ -1,9 +1,9 @@
 name: Laravel CI
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 permissions:
   contents: read
@@ -12,8 +12,6 @@ jobs:
   laravel-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Setup PHP
