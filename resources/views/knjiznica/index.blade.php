@@ -8,5 +8,11 @@
 </head>
 <body>
   <h1>Pozz</h1>
+
+  @forelse ($knjige as $knjiga)
+    <p>{{$knjiga->name}} - {{$knjiga->godine}}</p>    
+  @empty
+    <p>Nema knjiga</p>    
+  @endforelse
 </body>
 </html>

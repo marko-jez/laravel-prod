@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Knjiga;
 use Illuminate\Http\Request;
 
 class KnjiznicaController extends Controller
@@ -11,7 +12,8 @@ class KnjiznicaController extends Controller
      */
     public function index()
     {
-        return view('knjiznica.index');
+        $knjige = Knjiga::all();
+        return view('knjiznica.index', compact('knjige'));
     }
 
     /**
