@@ -10,7 +10,9 @@
   <h1>Pozz</h1>
 
   @forelse ($knjige as $knjiga)
-    <p>{{$knjiga->name}} - {{$knjiga->godine}}</p>    
+    <h3>{{$knjiga->autor->ime}} - {{$knjiga->autor->prezime}}</h3>
+    <p>{{$knjiga->naziv}}: {{$knjiga->godine}}</p>
+    <hr>   
   @empty
     <p>Nema knjiga</p>    
   @endforelse

@@ -12,7 +12,7 @@ class KnjiznicaController extends Controller
      */
     public function index()
     {
-        $knjige = Knjiga::all();
+        $knjige = Knjiga::with('autor')->get();
         return view('knjiznica.index', compact('knjige'));
     }
 
