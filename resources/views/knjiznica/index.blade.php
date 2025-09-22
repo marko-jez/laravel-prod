@@ -1,20 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <h1>Pozz</h1>
+@extends('layouts.app')
+
+@section('title', 'Sve knjige')
+
+@section('content')
+
+<h1>Sve knjige iz baze</h1>
 
   @forelse ($knjige as $knjiga)
-    <h3>{{$knjiga->autor->ime}} - {{$knjiga->autor->prezime}}</h3>
-    <p>{{$knjiga->naziv}}: {{$knjiga->godine}}</p>
+    <p>{{$knjiga->autor->ime}} {{$knjiga->autor->prezime}}: {{$knjiga->naziv}}</p>
+    <a href="{{route('knjige.show', $knjiga->id)}}">Detaljnije</a>
     <hr>   
   @empty
     <p>Nema knjiga</p>    
   @endforelse
-</body>
-</html>
+
+@endsection

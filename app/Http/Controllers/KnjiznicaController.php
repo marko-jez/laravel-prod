@@ -37,7 +37,8 @@ class KnjiznicaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $knjiga = Knjiga::with(['autor', 'zanr'])->findOrFail($id);
+        return view('knjiznica.show', compact('knjiga'));
     }
 
     /**
@@ -62,5 +63,12 @@ class KnjiznicaController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function search(Request $request) 
+    {
+        $query = $request->input('q');
+        $knjige = Knjiga::where('naziv', 'LIKE', '%' . $query . '%')->get();
+        return view('knjiznica.search', compact('query', 'knjige'));
     }
 }

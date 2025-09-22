@@ -14,4 +14,8 @@ class Knjiga extends Model
         return $this->belongsTo(Autor::class, 'autorID');
     }
 
+    public function zanr() {
+        return $this->belongsTo(Zanr::class, 'zanrId');
+    }
+
 }
